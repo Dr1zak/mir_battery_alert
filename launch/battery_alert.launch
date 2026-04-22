@@ -1,0 +1,28 @@
+<launch>
+  <arg name="robot_name"          default="MiR_01"/>
+  <arg name="warn_threshold"      default="20.0"/>
+  <arg name="critical_threshold"  default="10.0"/>
+  <arg name="alert_cooldown"      default="300"/>
+  <arg name="slack_webhook_url"   default=""/>
+  <arg name="teams_webhook_url"   default=""/>
+  <arg name="battery_topic"       default="/battery_state"/>
+
+  <node name="battery_alert_node"
+        pkg="mir_battery_alert"
+        type="battery_alert_node.py"
+        output="screen"
+        respawn="true"
+        respawn_delay="5">
+
+    <rosparam command="load" file="$(find mir_battery_alert)/config/params.yaml"/>
+
+    <param name="robot_name"          value="$(arg robot_name)"/>
+    <param name="warn_threshold"      value="$(arg warn_threshold)"/>
+    <param name="critical_threshold"  value="$(arg critical_threshold)"/>
+    <param name="alert_cooldown"      value="$(arg alert_cooldown)"/>
+    <param name="slack_webhook_url"   value="$(arg slack_webhook_url)"/>
+    <param name="teams_webhook_url"   value="$(arg teams_webhook_url)"/>
+    <param name="battery_topic"       value="$(arg battery_topic)"/>
+
+  </node>
+</launch>

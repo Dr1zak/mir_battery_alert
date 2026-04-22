@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mir_battery_alert</name>
+  <version>0.1.0</version>
+  <description>
+    Monitors MiR AMR battery state, publishes ROS diagnostics,
+    and fires Slack/Teams webhook alerts on low/critical battery.
+  </description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>diagnostic_msgs</exec_depend>
+  <exec_depend>python3-requests</exec_depend>
+</package>

@@ -1,7 +1,5 @@
 # mir_battery_alert
 
-Your MiR runs out of battery in the middle of a shift and nobody noticed. This package fixes that.
-
 It's a single ROS node that watches the battery topic, publishes to `/diagnostics`, and hits a Slack or Teams webhook when charge drops below whatever thresholds you configure. That's it. No bloat.
 
 ---
